@@ -9,12 +9,10 @@ import Search from "./components/Search/Search";
 function App() {
   let [pageNumber, setPageNumber] = useState(1);
 
-  let [search, setSearch] = useState("")
+  let [search, setSearch] = useState("");
 
   let [fetchedData, updateFetchedData] = useState([]);
   let { info, results } = fetchedData;
-
-  
 
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
@@ -30,7 +28,7 @@ function App() {
       <h1 className="text-center ubuntu my-4">
         Rick and Morty <span className="text-primary">App</span>
       </h1>
-      <Search setSearch={setSearch} setPageNumber={setPageNumber}/>
+      <Search setSearch={setSearch} setPageNumber={setPageNumber} />
 
       <div className="container">
         <div className="row">
@@ -39,15 +37,13 @@ function App() {
           </div>
           <div className="col-8">
             <div className="row">
-              <Cards results={results}/>
+              <Cards results={results} />
             </div>
           </div>
         </div>
       </div>
 
-      <Pagination pageNumber={pageNumber}  setPageNumber={setPageNumber} />
-
-
+      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
     </div>
   );
 }
