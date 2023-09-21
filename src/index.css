@@ -1,0 +1,10 @@
+.ubuntu {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+}
+
+/* Globals */
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
