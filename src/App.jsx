@@ -9,8 +9,25 @@ import Search from './components/Search/Search';
 
 import axios from 'axios';
 import LoadingBox from './components/LoadingBox/LoadingBox';
+import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Episodes from './components/Pages/Episodes';
+import Location from './components/Pages/Location';
 
 function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/episodes" element={<Episodes />} />
+        <Route path="/location" element={<Location />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+const Home = () => {
   const [loading, setLoading] = useState(false);
   const [pageNumber, setPageNumber] = useState(1);
   const [characters, setCharacters] = useState([]);
@@ -45,12 +62,6 @@ function App() {
         <LoadingBox />
       ) : (
         <>
-          <div>
-            <h1 className="text-center ubuntu my-4">
-              Rick & Morty <span className="text-primary">APP</span>
-            </h1>
-          </div>
-
           <Search setSearch={setSearch} setPageNumber={setPageNumber} />
 
           <div className="container">
@@ -79,6 +90,6 @@ function App() {
       )}
     </>
   );
-}
+};
 
 export default App;

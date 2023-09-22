@@ -8,3 +8,10 @@ a {
     color: #ffffff;
     text-decoration: none;
 }
+
+.active {
+    border-bottom: 3px solid #0b5ed7;
+    font-weight: 700;
+    color: #0b5ed7 !important;
+
+}
