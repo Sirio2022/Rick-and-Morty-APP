@@ -33,7 +33,7 @@ export default function Species() {
         className="accordion-collapse collapse"
         data-bs-parent="#accordionExample"
       >
-        <div className="accordion-body">
+        <div className="accordion-body d-flex flex-column gap-2">
           {species.map((item, index) => (
             <FilterBTN key={index} index={index} name="species" item={item} />
           ))}

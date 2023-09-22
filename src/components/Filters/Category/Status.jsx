@@ -22,7 +22,7 @@ export default function Status() {
         className="accordion-collapse collapse"
         data-bs-parent="#accordionExample"
       >
-        <div className="accordion-body">
+        <div className="accordion-body d-flex flex-column gap-2">
           {status.map((item, index) => (
             <FilterBTN key={index} index={index} name="status" item={item} />
           ))}

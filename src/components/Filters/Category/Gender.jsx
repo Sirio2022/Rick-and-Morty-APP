@@ -22,7 +22,7 @@ export default function Gender() {
         className="accordion-collapse collapse show"
         data-bs-parent="#accordionExample"
       >
-        <div className="accordion-body">
+        <div className="accordion-body d-flex flex-column gap-2">
           {genders.map((item, index) => (
             <FilterBTN key={index} index={index} name="gender" item={item} />
           ))}
