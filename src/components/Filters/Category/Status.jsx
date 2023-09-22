@@ -9,11 +9,11 @@ export default function Status({ setStatus, setPageNumber }) {
     <div className="accordion-item">
       <h2 className="accordion-header">
         <button
-          className="accordion-button collapsed"
+          className="accordion-button"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapseThree"
-          aria-expanded="false"
+          aria-expanded="true"
           aria-controls="collapseThree"
         >
           Status
@@ -21,7 +21,7 @@ export default function Status({ setStatus, setPageNumber }) {
       </h2>
       <div
         id="collapseThree"
-        className="accordion-collapse collapse"
+        className="accordion-collapse collapse show"
         data-bs-parent="#accordionExample"
       >
         <div className="accordion-body d-flex flex-column gap-2">

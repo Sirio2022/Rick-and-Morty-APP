@@ -10,12 +10,23 @@ export default function Filters({
   setGender,
   setPageNumber,
 }) {
+  const clearFilters = () => {
+    setStatus('');
+    setSpecies('');
+    setGender('');
+  };
+
   return (
     <div className="col-3">
       <div className="text-center fw-bold fs-4 mb-2">Filter</div>
       <div
         className="text-center text-decoration-underline text-primary mb-4"
         style={{ cursor: 'pointer' }}
+        onClick={() => {
+          clearFilters();
+          setPageNumber(1);
+          window.location.reload(false);
+        }}
       >
         Clear Filters
       </div>

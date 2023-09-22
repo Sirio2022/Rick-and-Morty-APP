@@ -55,7 +55,12 @@ function App() {
 
           <div className="container">
             <div className="row">
-              <Filters setStatus={setStatus} setPageNumber={setPageNumber} setSpecies={setSpecies} setGender={setGender} />
+              <Filters
+                setStatus={setStatus}
+                setSpecies={setSpecies}
+                setGender={setGender}
+                setPageNumber={setPageNumber}
+              />
 
               <div className="col-8">
                 <div className="row">
