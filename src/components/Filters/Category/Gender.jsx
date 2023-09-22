@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types';
+
 import FilterBTN from './FilterBTN';
 
-export default function Gender() {
+export default function Gender({ setGender, setPageNumber }) {
   const genders = ['female', 'male', 'genderless', 'unknown'];
 
   return (
@@ -24,10 +26,22 @@ export default function Gender() {
       >
         <div className="accordion-body d-flex flex-column gap-2">
           {genders.map((item, index) => (
-            <FilterBTN key={index} index={index} name="gender" item={item} />
+            <FilterBTN
+              key={index}
+              index={index}
+              name="gender"
+              item={item}
+              task={setGender}
+              setPageNumber={setPageNumber}
+            />
           ))}
         </div>
       </div>
     </div>
   );
 }
+
+Gender.propTypes = {
+  setGender: PropTypes.func,
+  setPageNumber: PropTypes.func,
+};

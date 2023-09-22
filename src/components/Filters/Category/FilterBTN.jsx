@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function FilterBTN({ name, index, item }) {
+export default function FilterBTN({ name, index, item, task, setPageNumber }) {
   return (
     <div>
       <style>
@@ -22,6 +22,10 @@ export default function FilterBTN({ name, index, item }) {
           type="radio"
           name={name}
           id={`${name}-${index}`}
+          onClick={() => {
+            setPageNumber(1);
+            task(item);
+          }}
         />
         <label className="btn btn-outline-primary" htmlFor={`${name}-${index}`}>
           {item}
@@ -35,4 +39,6 @@ FilterBTN.propTypes = {
   name: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   item: PropTypes.string.isRequired,
+  task: PropTypes.func,
+  setPageNumber: PropTypes.func,
 };

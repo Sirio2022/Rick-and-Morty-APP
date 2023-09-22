@@ -1,8 +1,15 @@
+import PropTypes from 'prop-types';
+
 import Gender from './Category/Gender';
 import Species from './Category/Species';
 import Status from './Category/Status';
 
-export default function Filters() {
+export default function Filters({
+  setStatus,
+  setSpecies,
+  setGender,
+  setPageNumber,
+}) {
   return (
     <div className="col-3">
       <div className="text-center fw-bold fs-4 mb-2">Filter</div>
@@ -14,10 +21,17 @@ export default function Filters() {
       </div>
 
       <div className="accordion" id="accordionExample">
-        <Status />
-        <Species />
-        <Gender />
+        <Status setStatus={setStatus} setPageNumber={setPageNumber} />
+        <Species setSpecies={setSpecies} setPageNumber={setPageNumber} />
+        <Gender setGender={setGender} setPageNumber={setPageNumber} />
       </div>
     </div>
   );
 }
+
+Filters.propTypes = {
+  setStatus: PropTypes.func,
+  setSpecies: PropTypes.func,
+  setGender: PropTypes.func,
+  setPageNumber: PropTypes.func,
+};

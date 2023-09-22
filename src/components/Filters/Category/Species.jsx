@@ -1,6 +1,8 @@
+import PropTypes from "prop-types";
+
 import FilterBTN from "./FilterBTN";
 
-export default function Species() {
+export default function Species({ setSpecies, setPageNumber}) {
   const species = [
     'Human',
     'Alien',
@@ -35,10 +37,21 @@ export default function Species() {
       >
         <div className="accordion-body d-flex flex-column gap-2">
           {species.map((item, index) => (
-            <FilterBTN key={index} index={index} name="species" item={item} />
+            <FilterBTN 
+            task={setSpecies}
+            setPageNumber={setPageNumber}
+            key={index} 
+            index={index} 
+            name="species" 
+            item={item}  />
           ))}
         </div>
       </div>
     </div>
   );
 }
+
+Species.propTypes = {
+  setSpecies: PropTypes.func,
+  setPageNumber: PropTypes.func,
+};
