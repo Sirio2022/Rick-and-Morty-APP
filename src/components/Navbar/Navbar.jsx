@@ -37,7 +37,7 @@ export default function Navbar() {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink className="nav-link" aria-current="page" to="/" activeClassName="active">
+              <NavLink className="nav-link" aria-current="page" to="/" activeclassname="active">
                 Characters
               </NavLink>
             </li>
