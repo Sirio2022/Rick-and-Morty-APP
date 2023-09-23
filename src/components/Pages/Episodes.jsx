@@ -43,7 +43,7 @@ export default function Episodes() {
       <div className="row">
         <div className="col-3">
           <h4 className="text-center mb-3">Select the episode:</h4>
-          <InputGroup setId={setId} total={51} />
+          <InputGroup setId={setId} total={51} name="Episode"/>
         </div>
         <div className="col-8">
           <div className="row">

@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
 
-export default function InputGroup({ setId, total }) {
+export default function InputGroup({ setId, total, name }) {
   return (
     <div className="input-group mb-3">
       <select
@@ -12,7 +12,7 @@ export default function InputGroup({ setId, total }) {
         <option>Choose...</option>
         {[...Array(total).keys()].map((item, index) => (
           <option key={index} value={index + 1}>
-            {index + 1}
+            {name} {index + 1}
           </option>
         ))}
       </select>
@@ -23,4 +23,5 @@ export default function InputGroup({ setId, total }) {
 InputGroup.propTypes = {
   setId: propTypes.func.isRequired,
   total: propTypes.number.isRequired,
+  name: propTypes.string.isRequired,
 };
