@@ -1,15 +1,23 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import styles from './Cards.module.scss';
 
-export default function Cards({ results }) {
+export default function Cards({ results, page }) {
   let display;
 
   if (results) {
     display = results.map((character) => {
       const { image, name, id, location, status } = character;
+      console.log(name);
+
       return (
-        <div className="col-4 position-relative mb-4" key={id}>
-          <div className={styles.cards}>
+        <Link
+          className="col-lg-4 col-md-6 col-12 position-relative mb-4 text-dark"
+          key={id}
+          to={`${page}${id}`}
+          style={{ textDecoration: 'none' }}
+        >
+          <div className={`${styles.cards} d-flex flex-column justify-content-center `}>
             <img
               src={image}
               alt="char img"
@@ -50,7 +58,7 @@ export default function Cards({ results }) {
               );
             }
           })()}
-        </div>
+        </Link>
       );
     });
   } else {
@@ -68,4 +76,5 @@ export default function Cards({ results }) {
 
 Cards.propTypes = {
   results: PropTypes.arrayOf(PropTypes.object).isRequired,
+  page: PropTypes.string.isRequired,
 };

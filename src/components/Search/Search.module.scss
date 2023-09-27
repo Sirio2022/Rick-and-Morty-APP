@@ -20,3 +20,10 @@
     color: #0b5ed7;
   }
 }
+
+@media (max-width: 576px) {
+  .input {
+    width: 80%;
+  }
+}
+

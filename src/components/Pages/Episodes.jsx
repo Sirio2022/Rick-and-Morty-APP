@@ -41,14 +41,15 @@ export default function Episodes() {
         </h5>
       </div>
       <div className="row">
-        <div className="col-3">
+        <div className="col-lg-3 col-12">
           <h4 className="text-center mb-3">Select the episode:</h4>
-          <InputGroup setId={setId} total={51} name="Episode"/>
+          <InputGroup setId={setId} total={51} name="Episode" />
         </div>
-        <div className="col-8">
+        <div className="col-lg-8 col-12">
           <div className="row">
             {
               <Cards
+                page="/episodes/"
                 results={results}
                 setResults={setResults}
                 setId={setId}

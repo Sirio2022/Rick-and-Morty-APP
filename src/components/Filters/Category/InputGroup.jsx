@@ -9,7 +9,7 @@ export default function InputGroup({ setId, total, name }) {
         className="form-select"
         id="inputGroupSelect01"
       >
-        <option>Choose...</option>
+        <option value={1}>Choose...</option>
         {[...Array(total).keys()].map((item, index) => (
           <option key={index} value={index + 1}>
             {name} {index + 1}
